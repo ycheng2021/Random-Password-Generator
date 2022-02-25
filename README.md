@@ -1,1 +1,2 @@
 # Random-Password-Generator
+This webpage will allow the user to generate a random, secure password that contains at least 8 characters and no more than 128 characters. When prompted, the user will be asked questions to decide whether or not the password should contain lowercase, uppercase, numeric, and/or special characters. 
