@@ -21,14 +21,28 @@ let generatePassword = function() {
     }
 
     // ask if user wants lowercase
-
+    let yesLower = window.confirm("Would you like to include lowercase letters?");
+    if (yesLower) {
+        database.push(...lowercase)
+    }
     // ask if user wants uppercase
-
+    let yesUpper = window.confirm("Would you like to include uppercase letters?");
+    if (yesUpper) {
+        database.push(...uppercase)
+    }
     // ask if user wants numbers
-
+    let yesNum = window.confirm("Would you like to include numbers?");
+    if (yesNum) {
+        database.push(...numbers)
+    }
     // ask if user wants special characters
+    let yesSpecial = window.confirm("Would you like to include special characters?");
+    if (yesSpecial) {
+        database.push(...specials)
+    }
 
     // set variable to use for index for randomizing
+    
     // set up another array to hold generated random characters
 
     // for loop that will take all above info and generate a string
