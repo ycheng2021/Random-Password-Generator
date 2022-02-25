@@ -42,14 +42,23 @@ let generatePassword = function() {
     }
 
     // set variable to use for index for randomizing
-    
     // set up another array to hold generated random characters
-
+    let genCharacters = [];
     // for loop that will take all above info and generate a string
-
+    console.log(userInput)
+    for (let i=0; i< userInput; i++) {
+        let randomNum = Math.floor(Math.random() * database.length-1)
+        genCharacters.push(database[randomNum]);
+    }
+    console.log(genCharacters[0]);
     // join array and return password
+    let outputPassword = genCharacters.join('');
 
-}
+    return outputPassword;
+    
+} 
+
+generatePassword();
 
 // Starting code
 var generateBtn = document.querySelector("#generate");
