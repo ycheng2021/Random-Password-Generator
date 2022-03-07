@@ -55,7 +55,7 @@ let generatePassword = function() {
     var conditions = questions();
 
     if (conditions === false) {
-        questions();
+        conditions = questions();
     }
 
     // set variable to use for index for randomizing
