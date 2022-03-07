@@ -5,12 +5,13 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const specials = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 
-// empty array to add into for condition
-const database = [];
-
 let userInput;
 
 function questions() {
+    
+    // empty array to add into for condition
+    let database = [];
+
      // prompts the question on password length
      userInput = prompt("Please choose a length between 8 to 128 characters");
 
@@ -45,6 +46,8 @@ function questions() {
          alert("Error! Please choose at least one character type.")
          return false;
      } 
+
+     return database
 }
 
 let generatePassword = function() {
@@ -60,8 +63,8 @@ let generatePassword = function() {
     let genCharacters = [];
     // for loop that will take all above info and generate a string
     for (let i=0; i< userInput; i++) {
-        let randomNum = Math.floor(Math.random() * database.length-1)
-        genCharacters.push(database[randomNum]);
+        let randomNum = Math.floor(Math.random() * conditions.length-1)
+        genCharacters.push(conditions[randomNum]);
     }
     // join array and return password
     let outputPassword = genCharacters.join('');
@@ -75,11 +78,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    
+    passwordText.value = password;
 }
 
 // Add event listener to generate button
